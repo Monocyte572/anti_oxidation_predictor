@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-oxidation Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍎 Anti-oxidation Predictor</h1>
+            <p class="subtitle">Predict anti-oxidation levels from RGB, Brix, and Hardness values</p>
+        </header>
+
+        <div class="card">
+            <form id="predictionForm">
+                <div class="form-section">
+                    <h2>RGB Values</h2>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="r">Red (R)</label>
+                            <input type="number" id="r" name="r" min="0" max="255" required>
+                            <span class="range-info">0-255</span>
+                        </div>
+                        <div class="input-field">
+                            <label for="g">Green (G)</label>
+                            <input type="number" id="g" name="g" min="0" max="255" required>
+                            <span class="range-info">0-255</span>
+                        </div>
+                        <div class="input-field">
+                            <label for="b">Blue (B)</label>
+                            <input type="number" id="b" name="b" min="0" max="255" required>
+                            <span class="range-info">0-255</span>
+                        </div>
+                    </div>
+                    <div class="color-preview" id="colorPreview"></div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Fruit Properties</h2>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="brix">Brix (°Bx)</label>
+                            <input type="number" id="brix" name="brix" step="0.1" required>
+                            <span class="range-info">Sugar content</span>
+                        </div>
+                        <div class="input-field">
+                            <label for="hardness">Hardness</label>
+                            <input type="number" id="hardness" name="hardness" step="0.1" required>
+                            <span class="range-info">Firmness value</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="predict-btn">Predict Anti-oxidation</button>
+            </form>
+        </div>
+
+        <div class="result-card" id="resultCard" style="display: none;">
+            <h2>Prediction Result</h2>
+            <div class="result-value">
+                <span class="label">Anti-oxidation:</span>
+                <span class="value" id="resultValue">-</span>
+            </div>
+            <div class="result-details">
+                <p><strong>Input Values:</strong></p>
+                <ul id="inputSummary"></ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by XGBoost Machine Learning Model</p>
+            <p class="disclaimer">Note: This is a predictive model. Results may vary based on actual conditions.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
