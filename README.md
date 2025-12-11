@@ -188,7 +188,8 @@ const API_URL = 'https://your-deployed-api.com/predict';
 MIT License
 
 ## 👤 Author
-Your Name
+ME AND AI
 
 ## 🤝 Contributing
 Pull requests are welcome!
+
